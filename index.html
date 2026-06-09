@@ -115,4 +115,77 @@ DOWNLOAD
 
 </div>
 
-</div>
+</div><script>
+
+const mode=document.getElementById("mode");
+const outputBox=document.getElementById("outputBox");
+const provider=document.getElementById("provider");
+const durasi=document.getElementById("durasi");
+const upload=document.getElementById("upload");
+const preview=document.getElementById("preview");
+const generateBtn=document.getElementById("generateBtn");
+
+mode.addEventListener("change",()=>{
+
+if(
+mode.value==="Image to Video" ||
+mode.value==="Text to Video"
+){
+outputBox.style.display="none";
+}else{
+outputBox.style.display="block";
+}
+
+});
+
+provider.addEventListener("change",()=>{
+
+if(provider.value==="Kling"){
+
+durasi.innerHTML=`
+<option>5 Detik</option>
+<option>10 Detik</option>
+`;
+
+}else{
+
+durasi.innerHTML=`
+<option>6 Detik</option>
+<option>10 Detik</option>
+`;
+
+}
+
+});
+
+upload.addEventListener("change",(e)=>{
+
+const file=e.target.files[0];
+
+if(file){
+
+preview.src=URL.createObjectURL(file);
+preview.style.display="block";
+
+}
+
+});
+
+generateBtn.addEventListener("click",()=>{
+
+generateBtn.disabled=true;
+generateBtn.innerText="LOADING...";
+
+setTimeout(()=>{
+
+generateBtn.disabled=false;
+generateBtn.innerText="GENERATE";
+
+},5000);
+
+});
+
+</script>
+
+</body>
+</html>
