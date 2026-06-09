@@ -1,3 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BANG_SAM12</title>
+
+<style>
+
+body{
+background:#07142c;
+font-family:Arial,sans-serif;
+color:white;
+margin:0;
+padding:15px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+}
+
+.header{
+text-align:center;
+margin-bottom:20px;
+}
+
+.header h1{
+margin:0;
+font-size:36px;
+font-weight:bold;
+}
+
+.header p{
+margin-top:5px;
+font-size:14px;
+opacity:.8;
+}
+
+.card{
+background:#0d2348;
+padding:15px;
+border-radius:15px;
+border:1px solid #174f9e;
+margin-bottom:15px;
+}
+
+.row{
+display:flex;
+gap:10px;
+margin-bottom:10px;
+}
+
+.row select,
+.row input{
+flex:1;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#6d4cff,#00c6ff);
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+#result{
+min-height:120px;
+border:1px dashed #4da3ff;
+padding:10px;
+border-radius:10px;
+}
+
+#preview{
+width:100%;
+display:none;
+margin-top:10px;
+border-radius:10px;
+}
+
+small{
+opacity:.8;
+}
+
+</style>
+</head>
+
 <body>
 
 <div class="container">
@@ -9,9 +116,13 @@
 
 <div class="card">
 
-<input type="password" placeholder="Masukkan API Key">
+<input
+type="password"
+placeholder="Masukkan API Key">
 
-<button id="cekApi">CEK API</button>
+<button id="cekApi">
+CEK API
+</button>
 
 <small>Status: Belum dicek</small>
 
@@ -22,12 +133,12 @@
 <div class="row">
 
 <select id="provider">
-<option selected>Kling</option>
+<option>Kling</option>
 <option>Grok</option>
 </select>
 
 <select id="model">
-<option selected>Kling 2.1 Pro</option>
+<option>Kling 2.1 Pro</option>
 <option>Kling 2.1</option>
 <option>Grok 4</option>
 <option>Grok 3</option>
@@ -82,12 +193,12 @@
 
 <br>
 
-<input type="file" id="upload" accept="image/*">
+<input
+type="file"
+id="upload"
+accept="image/*">
 
-<br><br>
-
-<img id="preview"
-style="width:100%;display:none;border-radius:10px;">
+<img id="preview">
 
 <br><br>
 
@@ -115,7 +226,9 @@ DOWNLOAD
 
 </div>
 
-</div><script>
+</div>
+
+<script>
 
 const mode=document.getElementById("mode");
 const outputBox=document.getElementById("outputBox");
